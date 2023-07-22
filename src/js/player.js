@@ -192,14 +192,14 @@ $(function () {
 	// ===============双击列表tr播放=======================
 
 	// 双击列表tr播放
-	$infoList_playlist.on("dblclick", "tr", function (ev) {
+	$infoList_playlist.on("click", "tr", function (ev) {
 		var _this = this;
 		curPlayLine = +_this.dataset.index;
 		playMusic(curPlayLine);
 	});
 
 	// 双击搜索列表tr播放
-	$infoList_search.on("dblclick", "tr", function () {
+	$infoList_search.on("click", "tr", function () {
 		playMusic($infoList_search.find("tr"), this);
 	});
 
