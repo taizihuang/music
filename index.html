@@ -199,6 +199,18 @@
 	<script type="text/javascript" src="./src/js/lyricScroll.js"></script>
 	<script type="text/javascript" src="./src/js/request.js"></script>
 	<script type="text/javascript" src="./src/js/player.js"></script>
+	<script>
+		var lastTouchEnd = 0;
+		document.documentElement.addEventListener('touchend',function (event) {
+			var now = Date.now( );
+			if (now - lastTouchEnd <= 300) {
+				event.preventDefault();
+			}
+			lastTouchEnd = now;
+			},{
+			passive: false
+			})
+	</script>
 </body>
 
 </html>
