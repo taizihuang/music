@@ -1,0 +1,118 @@
+<html lang="zh-cn">
+
+<head>
+    <script src='wopan.js'></script>
+    <script src="crypto-js.js"></script>
+    <script src="md5.min.js"></script>
+    <script src="jquery.min.js"></script>
+    <meta class="accesscode" id="9f62a17a-c643-461d-a1ff-55b1187ae924">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name=viewport>
+    <meta charset=utf-8>
+    <title>乐队的夏天</title>
+
+    <style>
+        html,body.BODY {
+            width: 90%;
+            margin: auto;
+            padding: auto;
+        }
+        div {
+            display: block;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 100px;
+        }
+        .button {
+            width: 170px;
+            display: block;
+            margin: auto;
+        }
+        video {
+            width: 70%;
+            min-width: 350px;
+            margin: auto;
+            display: block;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="BODY">
+
+        <h1>乐队的夏天</h1>
+        <div class="button">
+            <select id="mySelect">
+                <option value="S03E01.PartA">S03E01.PartA</option>
+                <option value="S03E01.PartB">S03E01.PartB</option>
+                <option value="S03E02.PartA">S03E02.PartA</option>
+                <option value="S03E02.PartB">S03E02.PartB</option>
+                <option value="S03E03.PartA">S03E03.PartA</option>
+                <option value="S03E03.PartB">S03E03.PartB</option>
+                <option value="E01">E01</option>
+                <option value="E02">E02</option>
+                <option value="E03">E03</option>
+                <option value="E04.Part1">E04.Part1</option>
+                <option value="E04.Part2">E04.Part2</option>
+                <option value="E05">E05</option>
+                <option value="E06">E06</option>
+                <option value="E07.part1">E07.Part1</option>
+                <option value="E07.part2">E07.Part2</option>
+                <option value="E08.Part1">E08.Part1</option>
+                <option value="E08.Part2">E08.Part2</option>
+                <option value="E09">E09</option>
+                <option value="E10.part1">E10.Part1</option>
+                <option value="E10.part2">E10.Part2</option>
+                <option value="E11.Part1">E11.Part1</option>
+                <option value="E11.Part2">E11.Part2</option>
+                <option value="E12">E12</option>
+                <option value="S02E01">S02E01</option>
+                <option value="S02E02">S02E02</option>
+                <option value="S02E03">S02E03</option>
+                <option value="S02E04">S02E04</option>
+                <option value="S02E05">S02E05</option>
+                <option value="S02E06">S02E06</option>
+                <option value="S02E07.partA">S02E07.PartA</option>
+                <option value="S02E07.partB">S02E07.PartB</option>
+                <option value="S02E08.PartA">S02E08.PartA</option>
+                <option value="S02E08.PartB">S02E08.PartB</option>
+                <option value="S02E09.partA">S02E09.partA</option>
+                <option value="S02E09.partB">S02E09.partB</option>
+                <option value="S02E10.partA">S02E10.PartA</option>
+                <option value="S02E10.partB">S02E10.PartB</option>
+                <option value="S02E11.PartA">S02E11.PartA</option>
+                <option value="S02E11.PartB">S02E11.PartB</option>
+                <option value="S02E12.PartA">S02E12.PartA</option>
+                <option value="S02E12.PartB">S02E12.PartB</option>
+                <option value="S02E13.PartA">S02E13.PartA</option>
+                <option value="S02E13.PartB">S02E13.PartB</option>
+                <option value="S02E14.PartA">S02E14.PartA</option>
+                <option value="S02E14.PartB">S02E14.PartB</option>
+                <option value="S02E15.PartA">S02E15.PartA</option>
+                <option value="S02E15.PartB">S02E15.PartB</option>
+            </select>
+    
+            <button id="btn-copy">确定</button>
+        </div>
+        <div id="player-container"><video id="video" controls src="src">
+        </video></div>
+
+    </div>
+
+    <!-- 
+<video onerror="setTimeout(fetchSrc(this.title, this.dataset.folder),10000)" id="乐队的夏天-The-Big-Band-2019-E02-WEB-DL-1080p-H264-AAC-Anonymous-mp4" title="乐队的夏天.The.Big.Band.2019.E02.WEB-DL.1080p.H264.AAC-Anonymous.mp4" data-folder="Movies/乐队的夏天" controls width="500" src="src" type="video/mp4"></video> -->
+
+</body>
+
+<script>
+    const copyButton = document.getElementById('btn-copy');
+    copyButton.addEventListener('click', (event) => {
+        var obj = document.getElementById('mySelect');
+        var index = obj.selectedIndex; //序号，取当前选中选项的序号
+        var title = obj.options[index].text;
+        $('#video')[0].src = fetchSrc(title, "Movies/乐队的夏天")
+    })
+</script>
+
+</html>
